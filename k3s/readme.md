@@ -35,7 +35,8 @@ chmod 600 $HOME/.kube/config
 Check that your node is up and running:
 
 ```bash
-kubectl get nodes
+[root@fedora ~]# kubectl get nodes
+NAME     STATUS   ROLES           AGE     VERSION
+fedora   Ready    control-plane   5h46m   v1.35.4+k3s1
+[root@fedora ~]#
 ```
-
-asdasd
