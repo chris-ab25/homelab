@@ -130,4 +130,5 @@ argocd-ingressroute   18h
 [root@fedora argocd]#
 ```
 
-## 8. To add ArgoCD verification -- author
+## 8. Verify Argocd url - argocd.192.168.18.99.sslip.io
+<img width="1914" height="1031" alt="image" src="https://github.com/user-attachments/assets/287c10fe-c920-45a5-af4e-b75dd10f40d4" />
