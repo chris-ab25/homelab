@@ -10,4 +10,4 @@ This repository documents the setup of a personal homelab environment on an Inte
 
 ## 💻 Operating System
 
-- **Fedora 43**
+- **Linux Mint 22**
