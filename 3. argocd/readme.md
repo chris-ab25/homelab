@@ -44,13 +44,9 @@ helm install argocd argo/argo-cd \
 
 Helm install output:
 ```bash
-[root@fedora argocd]# helm install argocd argo/argo-cd \
-  --namespace argocd \
-  --create-namespace \
-  -f values.yaml
-
+root@chris-NUC:~/Git/argocd# helm install argocd argo/argo-cd   --namespace argocd   --create-namespace   -f values.yaml
 NAME: argocd
-LAST DEPLOYED: Sat May  2 16:49:07 2026
+LAST DEPLOYED: Mon Jul 20 19:49:25 2026
 NAMESPACE: argocd
 STATUS: deployed
 REVISION: 1
@@ -89,7 +85,7 @@ spec:
     - websecure
   routes:
   - kind: Rule
-    match: Host(`argocd.192.168.18.99.sslip.io`)
+    match: Host(`argocd.192.168.18.201.sslip.io`)
     services:
     - name: argocd-server
       port: 443
@@ -121,14 +117,14 @@ kubectl apply -f ingressroute.yaml
 Use kubectl command on argocd namespace.
 
 ```bash
-[root@fedora argocd]# kubectl -n argocd get serverstransport
+root@chris-NUC:~/Git/argocd# kubectl -n argocd get serverstransport
 NAME          AGE
-skip-verify   7m24s
-[root@fedora argocd]# kubectl -n argocd get ingressroute
+skip-verify   25s
+root@chris-NUC:~/Git/argocd# kubectl -n argocd get ingressroute
 NAME                  AGE
-argocd-ingressroute   18h
-[root@fedora argocd]#
+argocd-ingressroute   33s
+root@chris-NUC:~/Git/argocd#
 ```
 
-## 8. Verify Argocd url - argocd.192.168.18.99.sslip.io
+## 8. Verify Argocd url - argocd.192.168.18.201.sslip.io
 <img width="1914" height="1031" alt="image" src="https://github.com/user-attachments/assets/287c10fe-c920-45a5-af4e-b75dd10f40d4" />

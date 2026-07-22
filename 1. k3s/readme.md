@@ -7,9 +7,7 @@ Follow the steps below to install and configure K3s on your system.
 Disable the firewall and adjust SELinux settings:
 
 ```bash
-systemctl disable firewalld --now
-sudo setenforce 0
-sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+systemctl disable ufw
 ```
 
 ### 2. Install K3s
@@ -35,8 +33,8 @@ chmod 600 $HOME/.kube/config
 Check that your node is up and running:
 
 ```bash
-[root@fedora ~]# kubectl get nodes
-NAME     STATUS   ROLES           AGE     VERSION
-fedora   Ready    control-plane   5h46m   v1.35.4+k3s1
-[root@fedora ~]#
+root@chris-NUC:~# kubectl get nodes
+NAME        STATUS   ROLES           AGE   VERSION
+chris-nuc   Ready    control-plane   32h   v1.36.2+k3s1
+root@chris-NUC:~#
 ```
