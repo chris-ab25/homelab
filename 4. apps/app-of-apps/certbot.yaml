@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: certbot
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/chris-ab25/homelab'
+    targetRevision: HEAD
+    path: '4. apps/certbot'
+  destination:
+    server: 'https://default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

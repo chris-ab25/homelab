@@ -12,9 +12,9 @@ cp helm /usr/local/bin/
 
 ### Verify helm install
 ```bash
-[root@fedora ~]# helm version
+root@chris-NUC:~# helm version
 version.BuildInfo{Version:"v4.1.4", GitCommit:"05fa37973dc9e42b76e1d2883494c87174b6074f", GitTreeState:"clean", GoVersion:"go1.25.9", KubeClientVersion:"v1.35"}
-[root@fedora ~]#
+root@chris-NUC:~#
 ```
 
 Helm release page: https://github.com/helm/helm/releases/
