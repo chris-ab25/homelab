@@ -1,3 +1,5 @@
+# This has to be deployed manually at first. Use kubectl apply -f parent-app.yaml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
