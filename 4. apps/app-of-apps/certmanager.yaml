@@ -1,18 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: certmanager
+  name: cert-manager
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/chris-ab25/homelab'
-    targetRevision: main
-    path: '4. apps/certmanager'
+    repoURL: 'https://charts.jetstack.io'
+    chart: cert-manager
+    targetRevision: v1.14.0
+    helm:
+      parameters:
+        - name: crds.enabled
+          value: 'true'
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: argocd
+    namespace: cert-manager
   syncPolicy:
     automated:
       prune: false
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
