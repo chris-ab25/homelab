@@ -13,9 +13,9 @@ spec:
         parameters:
           - name: crds.enabled
             value: "true"
-    - repoURL: https://github.com/chris-ab25/homelab
-      targetRevision: main
-      path: '4. apps/child-apps/certmanager'
+   # - repoURL: https://github.com/chris-ab25/homelab
+   #   targetRevision: main
+   #   path: '4. apps/child-apps/certmanager'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
