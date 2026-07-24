@@ -10,11 +10,11 @@ spec:
   source:
     repoURL: 'https://github.com/chris-ab25/homelab'
     targetRevision: main
-    path: '4. apps/app-of-apps'
+    path: '4. apps/parent-apps'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
     automated:
-      prune: false
+      prune: true
       selfHeal: true
