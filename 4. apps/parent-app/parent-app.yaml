@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: certbot
+  name: app-of-apps
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://github.com/chris-ab25/homelab'
     targetRevision: main
-    path: '4. apps/certbot'
+    path: '4. apps/app-of-apps'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
