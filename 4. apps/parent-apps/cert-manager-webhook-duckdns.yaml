@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-webhook-duckdns
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://ebrianne.github.io/helm-charts
+    chart: cert-manager-webhook-duckdns
+    targetRevision: 1.2.4
+    helm:
+      values: |
+        groupName: acme.duckdns.org
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cert-manager
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
