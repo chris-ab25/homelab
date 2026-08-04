@@ -14,7 +14,7 @@ spec:
     helm:
       values: |
         token:
-          value: ""
+          existingSecretName: duckdns-token
 
         clusterIssuer:
           staging:
