@@ -4,7 +4,7 @@ metadata:
   name: wildcard-duckdns-cert
   namespace: envoy-gateway-system
 spec:
-  secretName: duckdns-tls-secret
+  secretName: wildcard-duckdns-cert
   issuerRef:
     name: duckdns-letsencrypt-prod
     kind: ClusterIssuer
