@@ -13,7 +13,7 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-          - name: wildcard-duckdns-tls
+          - name: wildcard-duckdns-cert
       allowedRoutes:
         namespaces:
           from: All
