@@ -5,11 +5,11 @@ metadata:
   namespace: argocd
 spec:
   parentRefs:
-    - name: eg-gateway         # Name of your Gateway resource
-      namespace: default       # Namespace where your Gateway lives (if different)
+    - name: eg-gateway
+      namespace: default
   hostnames:
-    - "argocd.chrisab25.duckdns.org"    # Replace with your domain
+    - "argocd.chrisab25.duckdns.org"
   rules:
-      backendRefs:
-        - name: argocd-server  # Argo CD API Server Service name
-          port: 80
+    - backendRefs:
+      - name: argocd-server
+        port: 80

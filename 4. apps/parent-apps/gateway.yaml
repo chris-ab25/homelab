@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/chris-ab25/homelab'
     targetRevision: HEAD
-    path: '4. apps/gateway' # Directory containing Gateway & HTTPRoute YAMLs
+    path: '4. apps/gateway'
   destination:
     server: https://kubernetes.default.svc
     namespace: gateway-system
