@@ -9,4 +9,4 @@ spec:
     name: duckdns-letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-    - "*.example.duckdns.org"
+    - "*.chrisab25.duckdns.org"
