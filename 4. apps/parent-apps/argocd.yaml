@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gateway-routes
+  name: argocd
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,11 +10,10 @@ spec:
   source:
     repoURL: 'https://github.com/chris-ab25/homelab'
     targetRevision: HEAD
-    path: '4. apps/gateway' # Directory containing Gateway & HTTPRoute YAMLs
+    path: '4. apps/argocd' # Directory containing Gateway & HTTPRoute YAMLs
   destination:
     server: https://kubernetes.default.svc
-    namespace: gateway-system
+    namespace: argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-      - RespectIgnoreDifferences=true
