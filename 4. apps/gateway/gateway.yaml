@@ -1,0 +1,20 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: main-gateway
+  namespace: envoy-gateway-system
+spec:
+  gatewayClassName: eg
+  listeners:
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: "*.chrisab25.duckdns.org"
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: wildcard-duckdns-tls
+      allowedRoutes:
+        namespaces:
+          from: All
+  syncPolicy: {}

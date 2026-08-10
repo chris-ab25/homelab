@@ -1,0 +1,16 @@
+# Remove traefik from k3s
+tee /etc/rancher/k3s/config.yaml > /dev/null <<EOF
+disable:
+  - traefik
+EOF
+
+rm /var/lib/rancher/k3s/server/manifests/traefik.yaml
+
+systemctl restart k3s
+
+kubectl -n kube-system delete helmcharts.helm.cattle.io traefik traefik-crd --ignore-not-found
+
+kubectl get pods -n kube-system | grep traefik
+
+# Port forward while Traefik/Gateway API is not yet available
+kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
