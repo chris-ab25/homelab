@@ -2,7 +2,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: main-gateway
-  namespace: envoy-gateway-system
+  namespace: gateway-system
 spec:
   gatewayClassName: eg
   listeners:
@@ -17,4 +17,6 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-  syncPolicy: {}
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

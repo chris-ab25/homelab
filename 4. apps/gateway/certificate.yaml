@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: wildcard-duckdns-cert
-  namespace: envoy-gateway-system
+  namespace: gateway-system
 spec:
   secretName: wildcard-duckdns-cert
   issuerRef:
