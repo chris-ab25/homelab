@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   parentRefs:
-    - name: eg-gateway
-      namespace: default
+    - name: main-gateway
+      namespace: gateway-system
   hostnames:
     - "argocd.chrisab25.duckdns.org"
   rules:
