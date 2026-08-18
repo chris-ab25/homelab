@@ -22,8 +22,8 @@ spec:
         values: |
           image:
             registry: docker.io
-            repository: bitnami/nginx
-            tag: 1.27
+            repository: nginx
+            tag: alpine
           service:
             type: ClusterIP
             ports:
