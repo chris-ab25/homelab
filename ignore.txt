@@ -18,3 +18,7 @@ kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
 # Patch argocd after gateway api install
 kubectl patch configmap argocd-cm -n argocd --type merge -p '{"data":{"server.insecure":"true"}}'
 kubectl rollout restart deployment argocd-server -n argocd
+
+
+TO DO:
+Create custom helm chart for nginx workload.
