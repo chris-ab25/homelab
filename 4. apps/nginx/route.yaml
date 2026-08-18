@@ -11,5 +11,5 @@ spec:
     - "nginx.chrisab25.duckdns.org"
   rules:
     - backendRefs:
-      - name: nginx-service
+      - name: test-nginx
         port: 80
