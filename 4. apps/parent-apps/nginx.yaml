@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-nginx
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  # Define multiple sources under the sources array
+  sources:
+    # --- Source 1: Custom local/Git HTTPRoute ---
+    - repoURL: 'https://github.com/chris-ab25/homelab.git'
+      targetRevision: main
+      path: 4. apps/nginx
+
+    # --- Source 2: NGINX Helm Chart ---
+    - repoURL: 'https://charts.bitnami.com/bitnami'
+      chart: nginx
+      targetRevision: 18.2.3
+      helm:
+        values: |
+          service:
+            type: ClusterIP
+            ports:
+              http: 80
+          replicaCount: 1
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: test-nginx
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

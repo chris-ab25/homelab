@@ -14,3 +14,7 @@ kubectl get pods -n kube-system | grep traefik
 
 # Port forward while Traefik/Gateway API is not yet available
 kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
+
+# Patch argocd after gateway api install
+kubectl patch configmap argocd-cm -n argocd --type merge -p '{"data":{"server.insecure":"true"}}'
+kubectl rollout restart deployment argocd-server -n argocd
