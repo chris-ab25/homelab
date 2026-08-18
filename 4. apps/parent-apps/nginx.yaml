@@ -17,9 +17,13 @@ spec:
     # --- Source 2: NGINX Helm Chart ---
     - repoURL: 'https://charts.bitnami.com/bitnami'
       chart: nginx
-      targetRevision: latest
+      targetRevision: 18.2.3
       helm:
         values: |
+          image:
+            registry: docker.io
+            repository: bitnami/nginx
+            tag: 1.27
           service:
             type: ClusterIP
             ports:
