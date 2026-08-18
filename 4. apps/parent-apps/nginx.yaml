@@ -17,7 +17,7 @@ spec:
     # --- Source 2: NGINX Helm Chart ---
     - repoURL: 'https://charts.bitnami.com/bitnami'
       chart: nginx
-      targetRevision: HEAD
+      targetRevision: 25.0.21
       helm:
         values: |
           image:
